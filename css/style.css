@@ -1,0 +1,237 @@
+:root {
+    --bg-color: #121212;
+    --surface-color: #1E1E1E;
+    --text-color: #F5F5F5;
+    --accent-color: #D48C2A;
+    --text-on-accent: #121212;
+}
+
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+}
+
+header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo img {
+    height: 40px; /* À ajuster selon ton logo */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-color);
+}
+
+#hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('../assets/img/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    font-size: 5rem;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-on-accent);
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.btn-cta:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+#menu {
+    padding: 80px 0;
+}
+
+#menu h2 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+.filters {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.filter-btn.active {
+    opacity: 1;
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* La grille magique */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    background-color: var(--surface-color);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-img {
+    height: 250px;
+    position: relative;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--accent-color);
+    color: var(--text-on-accent);
+    padding: 5px 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 20px;
+}
+#etapes {
+    padding: 80px 0;
+    display: flex;
+    justify-content: space-between; /* Espace égal entre les 3 blocs */
+    gap: 40px; /* Espace de sécurité entre les blocs */
+    text-align: center;
+}
+
+.step {
+    flex: 1; /* Chaque étape prend la même largeur */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: 0.3s ease;
+}
+
+/* Style des icônes/images d'étapes */
+.step-icon {
+    width: 100px;
+    height: 100px;
+    background-color: var(--surface-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 50%; /* Cercle parfait */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.step-icon img {
+    width: 50%; /* L'icône prend la moitié du cercle */
+    height: auto;
+    filter: brightness(0) invert(1); /* Si ton icône est noire, elle devient blanche */
+}
+
+.step h3 {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.step p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    max-width: 250px; /* Évite que le texte soit trop large */
+}
+
+/* --- RESPONSIVE (Mobile) --- */
+@media (max-width: 768px) {
+    #etapes {
+        flex-direction: column; /* On empile les étapes verticalement */
+        align-items: center;
+    }
+
+    .step {
+        margin-bottom: 30px;
+    }
+}
