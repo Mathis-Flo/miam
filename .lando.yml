@@ -1,4 +1,0 @@
-name: miam
-recipe: lemp
-config:
-  webroot: .
